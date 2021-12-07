@@ -31,7 +31,7 @@ function chargeAPI($api_url, $server_key, $request_body) {
         CURLOPT_URL => $api_url,
         CURLOPT_RETURNTRANSFER => 1,
         CURLOPT_POST => 1,
-        CURLOPT_HEADER => 0 
+        CURLOPT_HEADER => 0, 
         CURLOPT_HTTPHEADER = array(
             'Content-Type: application/json',
             'Accept: application/json',
@@ -44,7 +44,7 @@ function chargeAPI($api_url, $server_key, $request_body) {
     $result = array(
         'body' => curl_exec($ch),
         'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE),
-    )
+    );
     
     return $result;
 }
